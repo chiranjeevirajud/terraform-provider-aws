@@ -28,6 +28,7 @@ jobs:
           semgrep $COMMON_PARAMS \
             --config .ci/.semgrep.yml \
             --config 'r/dgryski.semgrep-go.badnilguard' \
+            --config 'r/dgryski.semgrep-go.oddifsequence' \
             --config 'r/dgryski.semgrep-go.oserrors'
 
   naming_cae:
