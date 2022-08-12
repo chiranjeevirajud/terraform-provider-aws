@@ -77,18 +77,14 @@ func testAccCheckPolicyExists(n string) resource.TestCheckFunc {
 
 		_, err := tfacmpca.FindPolicyByARN(conn, rs.Primary.ID)
 
-		if err != nil {
-			return err
-		}
-
-		return nil
+		return err
 	}
 }
 
 func testAccPolicyConfig_basic() string {
 	return `
 data "aws_caller_identity" "current" {}
-
+internal/service/acm/certificate_validation_test.go
 data "aws_partition" "current" {}
 
 resource "aws_acmpca_certificate_authority" "test" {

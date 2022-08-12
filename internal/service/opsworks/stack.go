@@ -272,12 +272,7 @@ func resourceSetStackCustomCookbooksSource(d *schema.ResourceData, v *opsworks.S
 		nv = append(nv, m)
 	}
 
-	err := d.Set("custom_cookbooks_source", nv)
-	if err != nil {
-		// should never happen
-		return err
-	}
-	return nil
+	return d.Set("custom_cookbooks_source", nv)
 }
 
 func resourceStackRead(d *schema.ResourceData, meta interface{}) error {
