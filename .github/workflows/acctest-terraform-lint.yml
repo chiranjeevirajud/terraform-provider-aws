@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version-file: .go-version
-      - uses: actions/cache@v3
+      - uses: actions/cache@v3.0.11
         continue-on-error: true
         timeout-minutes: 2
         with:
@@ -47,7 +47,7 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version-file: .go-version
-      - uses: actions/cache@v3
+      - uses: actions/cache@v3.0.11
         continue-on-error: true
         timeout-minutes: 2
         with:
@@ -55,7 +55,7 @@ jobs:
           key: ${{ runner.os }}-go-pkg-mod-${{ hashFiles('go.sum') }}
       - run: cd .ci/tools && go install github.com/katbyte/terrafmt
       - run: cd .ci/tools && go install github.com/terraform-linters/tflint
-      - uses: actions/cache@v3
+      - uses: actions/cache@v3.0.11
         name: Cache plugin dir
         with:
           path: ~/.tflint.d/plugins
@@ -73,7 +73,7 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version-file: .go-version
-      - uses: actions/cache@v3
+      - uses: actions/cache@v3.0.11
         continue-on-error: true
         timeout-minutes: 2
         with:
@@ -81,7 +81,7 @@ jobs:
           key: ${{ runner.os }}-go-pkg-mod-${{ hashFiles('go.sum') }}
       - run: cd .ci/tools && go install github.com/katbyte/terrafmt
       - run: cd .ci/tools && go install github.com/terraform-linters/tflint
-      - uses: actions/cache@v3
+      - uses: actions/cache@v3.0.11
         name: Cache plugin dir
         with:
           path: ~/.tflint.d/plugins
